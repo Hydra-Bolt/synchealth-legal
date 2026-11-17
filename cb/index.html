@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HealthSync OAuth Redirect</title>
+</head>
+<body style="font-family:system-ui,sans-serif;text-align:center;padding:3rem 1rem;">
+  <p>Returning to HealthSync...</p>
+  <p><a id="open-app" href="healthsync://oauth/callback">Tap here if not redirected automatically</a></p>
+  <script>
+    (function () {
+      var target = "healthsync://oauth/callback" + (window.location.search || "") + (window.location.hash || "");
+      document.getElementById("open-app").href = target;
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
